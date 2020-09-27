@@ -10,10 +10,14 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
-      - name: Install & Compile Frontend
+      - name: Install Frontend
         run: |
           cd frontend
           npm install
+      - name: Compile Frontend
+        run: |
+          cd frontend
+          npm run build
       - name: Zip Assets
         run: |
           cd frontend
