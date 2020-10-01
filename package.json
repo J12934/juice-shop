@@ -55,7 +55,6 @@
     "build": "cd frontend && node ./node_modules/@angular/cli/bin/ng build --aot --prod --output-hashing=none --vendor-chunk=true --source-map=false",
     "e2e": "node test/e2eTests.js",
     "frisby": "nyc --report-dir=./build/reports/coverage/api-tests jest --silent --runInBand --forceExit",
-    "postinstall": "cd frontend && npm install && cd .. && npm run build",
     "lint": "standard && cd frontend && ng lint && cd ..",
     "lint:config": "schema validate -s config.schema.yml",
     "lint:fix": "standard --fix && cd frontend && ./node_modules/.bin/ng lint --fix && cd ..",
