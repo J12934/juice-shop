@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "postinstall": "ngcc --tsconfig \"./src/tsconfig.app.json\"",
+    "build": "node ./node_modules/@angular/cli/bin/ng build --aot --prod --output-hashing=none --vendor-chunk=true --source-map=false",
     "test": "ng test",
-    "lint": "ng lint",
-    "postbuild": "ngcc --tsconfig \"./src/tsconfig.app.json\""
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
