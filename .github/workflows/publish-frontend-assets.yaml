@@ -23,6 +23,7 @@ jobs:
           npm run build
           # Copy over compiled assets folder to the current working dir.
           # This allows to create a zip which contains the assets in the top level. Instead of having nested folders
+          cd ..
           cp -R frontend/dist/frontend assets
       - uses: montudor/action-zip@v0.1.0
         with:
