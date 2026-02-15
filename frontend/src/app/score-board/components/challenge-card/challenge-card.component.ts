@@ -27,6 +27,9 @@ export class ChallengeCardComponent implements OnInit, OnChanges {
   public repeatChallengeNotification: (challengeKey: string) => void
 
   @Input()
+  public solveChallenge: (challengeKey: string) => void
+
+  @Input()
   public unlockHint: (hintId: number, challengeKey?: string) => void
 
   @Input()

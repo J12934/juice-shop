@@ -16,6 +16,15 @@
     }
   </div>
   <div class="badge-group">
+    @if (!challenge.solved) {
+      <button
+        class="badge"
+        (click)="solveChallenge(challenge.key)"
+        [matTooltip]="'Solve challenge'"
+        >
+        <mat-icon>check_circle</mat-icon>
+      </button>
+    }
     <!-- info text if the challenge is unavailable -->
     @if (challenge.disabledEnv !== null && challenge.disabledEnv !== 'safetyMode') {
       <button

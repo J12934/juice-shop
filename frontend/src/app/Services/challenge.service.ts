@@ -27,6 +27,10 @@ export class ChallengeService {
     return this.http.get(this.hostServer + '/rest/repeat-notification', { params: { challenge: challengeName }, responseType: 'text' as const }).pipe(catchError((err) => { throw err }))
   }
 
+  solveChallenge (key: string) {
+    return this.http.put(this.hostServer + '/rest/challenges/' + key + '/solve', {}, { responseType: 'text' as const }).pipe(catchError((err) => { throw err }))
+  }
+
   continueCode () {
     return this.http.get(this.hostServer + '/rest/continue-code').pipe(map((response: any) => response.continueCode), catchError((err) => { throw err }))
   }

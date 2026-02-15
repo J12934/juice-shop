@@ -201,6 +201,10 @@ export class ScoreBoardComponent implements OnInit, OnDestroy, AfterViewInit {
     await firstValueFrom(this.challengeService.repeatNotification(encodeURIComponent(challenge.name)))
   }
 
+  async solveChallenge (challengeKey: string) {
+    await firstValueFrom(this.challengeService.solveChallenge(challengeKey))
+  }
+
   unlockHint (hintId: number, challengeKey?: string) {
     this.lastUnlockedChallengeKey = challengeKey ?? null
     this.hintService.put(hintId, { unlocked: true }).subscribe({
